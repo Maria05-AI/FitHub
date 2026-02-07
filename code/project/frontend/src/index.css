@@ -1,0 +1,158 @@
+ @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 217 60% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 217 60% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 60% 15%;
+
+    --primary: 174 45% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 174 45% 92%;
+    --secondary-foreground: 217 60% 15%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 217 20% 50%;
+
+    --accent: 174 55% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 174 45% 47%;
+
+    --radius: 0.75rem;
+    
+    /* Custom FitHub Design Tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(174 45% 47%) 0%, hsl(174 55% 40%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(174 45% 98%) 100%);
+    --shadow-card: 0 4px 20px -4px hsl(174 45% 47% / 0.15);
+    --shadow-hover: 0 8px 30px -6px hsl(174 45% 47% / 0.25);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 217 60% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 217 50% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 217 50% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 174 45% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 40% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 217 40% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 174 55% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 40% 20%;
+    --input: 217 40% 20%;
+    --ring: 174 45% 47%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(174 45% 47%) 0%, hsl(174 55% 40%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(217 50% 12%) 0%, hsl(217 45% 15%) 100%);
+    --shadow-card: 0 4px 20px -4px hsl(174 45% 47% / 0.3);
+    --shadow-hover: 0 8px 30px -6px hsl(174 45% 47% / 0.4);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
